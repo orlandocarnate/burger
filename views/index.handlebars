@@ -6,28 +6,23 @@
     </header>
     <div class="row pb-5 d-flex justify-content-between">
 
-        <div class='col-sm-12 col-md-6'>
+        <div id="available" class='col-sm-12 col-md-6'>
             <h3 class="text-center">Available</h3>
+            {{#each burgers}}
             <div class="burger d-flex justify-content-between">
-                Cras justo odio<button type="button" class="btn btn-primary"><i class="fas fa-utensils"></i> Eat
+                {{ burger_name }} <button type="button" class="btn btn-primary" data-id="{{id}}"><i class="fas fa-utensils"></i> Eat
                     It!</button>
             </div>
-            <div class="burger d-flex justify-content-between">
-                Cras justo odio<button type="button" class="btn btn-primary"><i class="fas fa-utensils"></i> Eat
-                    It!</button>
-            </div>
-            <div class="burger d-flex justify-content-between">
-                Cras justo odio<button type="button" class="btn btn-primary"><i class="fas fa-utensils"></i> Eat
-                    It!</button>
-            </div>
+            {{/each}}
+
         </div>
-        <div class='col-sm-12 col-md-6'>
+        <div id="consumed" class='col-sm-12 col-md-6'>
             <h3 class="text-center">Consumed</h3>
-            <div class="eaten d-flex justify-content-between">
-                Cras justo odio
+            <div class="eaten d-flex justify-content-center">
+                <i class="fas fa-drumstick-bite"></i> Cras justo odio
             </div>
-            <div class="eaten d-flex justify-content-between">
-                Cras justo odio
+            <div class="eaten d-flex justify-content-center">
+                <i class="fas fa-drumstick-bite"></i> Cras justo odio
             </div>
         </div>
 
@@ -35,12 +30,12 @@
 
     <div class="row pb-5 ">
         <div class="col-12">
-            <form method="POST" class="bg-white p-3">
+            <form class="create-burger-form bg-white p-3">
                 <p>Enter the name of the burger you would like to eat.</p>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg">
+                    <input id="burger_name" type="text" class="form-control form-control-lg">
                     <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus-square"></i> Add New
+                        <button id="submit" type="submit" class="btn btn-primary"><i class="fas fa-plus-square"></i> Add New
                             Burger</button>
                     </div>
                 </div>

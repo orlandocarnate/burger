@@ -1,12 +1,19 @@
 // import orm object
 var orm = require('../config/orm.js');
 
-// call each orm method
-// "SELECT * FROM ?? WHERE ?? = ?";
-//selectWhere: function (tableInput, colToSearch, valOfCol)
-orm.selectAllFrom("party_name", "parties");
-
-// Console log all the client names.
-orm.selectAllFrom("client_name", "clients");
+const burger = {
+    // the callback parameter renders the results to the index.handlebars template
+    all: (callback) => {
+        orm.all("burgers", (response) => {
+            callback(response);
+        })
+    },
+    create:(callback) => {
+        orm.create(newBurger, (response) => {
+            callback(response)
+        })
+    }
+}
 
 // export burger
+module.exports = burger;
