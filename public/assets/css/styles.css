@@ -35,22 +35,23 @@ h3 {
 
 .burger {
     /* box-sizing: border-box; */
-    width: 100%;
+    /* width: 90%; */
     background-color: #fff;
     padding: 15px;
     /* margin: 5px; */
     margin: 0 auto 10px auto;
-    font-size: 1.5em;
+    
 }
 
 .burger, form, .eaten {
     border-radius: 10px;
     box-shadow: 4px 6px rgba(0, 0, 0, 0.493);
+    font-size: 1.5em;
 }
 
 .eaten {
     color: rgb(172, 172, 172);
-    width: 100%;
+    /* width: 90%; */
     background-color: #fff;
     padding: 15px;
     /* margin: 5px; */
