@@ -14,7 +14,14 @@ const burger = {
             // contatining response.json({id: result.insertId})
             callback(response)
         })
-    }
+    },
+    update:(selectedID, callback) => {
+        orm.update(selectedID, (response) => {
+            // forward the callback from burgers_controller.js
+            // contatining response.json({id: result.insertId})
+            callback(response)
+        })
+    },
 }
 
 // export burger

@@ -27,5 +27,13 @@ router.post("/api/newburger", function (request, response) {
     });
 });
 
+router.put("/api/update", function (request, response) {
+    console.log(request.body.id);
+    burger.update( request.body.id, (result) => {
+        response.json({id: result.insertId});
+        console.log("Updated ID: ", result.insertId);
+    });
+});
+
 // export router object for server.js
 module.exports = router;

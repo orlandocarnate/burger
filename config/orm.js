@@ -21,11 +21,22 @@ let orm = {
             }
             // run the callback function from burgers_controller.js
             // with result as argument for response.json({id: result.insertId}) 
-            callback(result) 
+            callback(result)
         })
-    }
+    },
 
     // updateOne method
+    update: (selectedID, callback) => {
+        const queryStr = "UPDATE burgers SET devoured = NOT devoured WHERE id = ?";
+        connection.query(queryStr, selectedID, (err, result) => {
+            if (err) {
+                throw err;
+            }
+            // run the callback function from burgers_controller.js
+            // with result as argument for response.json({id: result.insertId}) 
+            callback(result)
+        })
+    }
 }
 
 // export orm object

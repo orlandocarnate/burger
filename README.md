@@ -83,6 +83,18 @@ All the recommended files and directories from the steps above should look like 
 
 * `app.use(express.json());` parses INCOMING requests with JSON payloads and s based on a body parser. ([source] (https://expressjs.com/en/api.html))
 
+* Using ES6 for jQuery Click Event methods won't work:
+        * Doesn't work for $(this) method: 
+```
+        $(".btn-burger").on("click", () => {
+                var selectedID = $(this).data("id");
+```
+        * You need to spell out function ()
+```
+        $(".btn-burger").on("click", function() {
+                var selectedID = $(this).data("id");   
+```
+
 ## SQL Notes
 * The **??** signs are for swapping out *table* or *column* names.
 * The **?** signs are for swapping out other *values*.
