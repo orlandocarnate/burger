@@ -12,7 +12,7 @@
             {{#each burgers}}
             {{#unless devoured}}
             <div class="burger d-flex justify-content-between">
-                {{ burger_name }} {{ devoured }}<button class="btn-burger btn btn-primary" data-id={{ id }}><i class="fas fa-utensils"></i> Eat
+                {{ burger_name }}<button class="btn-burger btn btn-primary" data-id={{ id }}><i class="fas fa-utensils"></i> Eat
                     It!</button>
             </div>
             {{/unless}}
@@ -24,7 +24,7 @@
             {{#each burgers}}
             {{#if devoured}}
             <div class="eaten d-flex justify-content-center">
-                <i class="fas fa-drumstick-bite"></i>{{ burger_name }} {{ devoured }}
+                <i class="fas fa-drumstick-bite"></i>{{ burger_name }}
             </div>
             {{/if}}
             {{/each}}
