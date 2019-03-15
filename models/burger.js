@@ -8,8 +8,10 @@ const burger = {
             callback(response);
         })
     },
-    create:(callback) => {
-        orm.create(newBurger, (response) => {
+    create:(burger_name, callback) => {
+        orm.create(burger_name, (response) => {
+            // forward the callback from burgers_controller.js
+            // contatining response.json({id: result.insertId})
             callback(response)
         })
     }

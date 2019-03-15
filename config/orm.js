@@ -19,7 +19,9 @@ let orm = {
             if (err) {
                 throw err;
             }
-            callback(result) // run the callback function with result as argument
+            // run the callback function from burgers_controller.js
+            // with result as argument for response.json({id: result.insertId}) 
+            callback(result) 
         })
     }
 

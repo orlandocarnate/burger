@@ -27,6 +27,8 @@ The Burger App is burger logger that uses MySQL, Node, Express, Handlebars and a
 3. [models.burger.js] The `burger.create(name)` method takes in the name paramenter and callback and sends it to the orm.create() method
 4. [config/orm.js] The orm.create(name, callback) method use the name parameter in the `INSERT INTO burgers (name) VALUES (?)` SQL statement as a value for `(?)`
 5. After the new burger has been successfully added to the database, the page is reloaded, showing the updated list.
+6. [response.json({id: result.insertId})](https://github.com/mysqljs/mysql#getting-the-id-of-an-inserted-row) returns the last insterted row id.
+        
 
 ### How the UPDATE ORM method works:
 1. 
