@@ -20,12 +20,16 @@ $(document).ready(() => {
       );
 
     } else {
-      alert("Create Alert Modal for invalid form submission!");
+    //   $('#alertModal').modal({
+    //     backdrop: 'static',
+    //     keyboard: false
+    // });
+    $('#alertModal').modal('show');
     }
   });
 
   // Consume Burger
-  $(".btn-burger").on("click", function() {
+  $(".btn-burger").on("click", function () {
     let selectedID = {
       id: $(this).data("id")
     }
@@ -43,5 +47,7 @@ $(document).ready(() => {
   })
 
 
-// end jQuery file
+
+
+  // end jQuery file
 })
