@@ -1,4 +1,5 @@
 # Burger App using a custom ORM
+[Heroku Website](http://oc-burger.herokuapp.com/)
 The Burger App is burger logger that uses MySQL, Node, Express, Handlebars and an ORM made from scratch. The app also follows the MVC design pattern and uses Node and MySQL to query and route data, and Handlebars to generate HTML from templates.
 
 ## Overview
@@ -14,13 +15,20 @@ The Burger App is burger logger that uses MySQL, Node, Express, Handlebars and a
 * [Express package](https://www.npmjs.com/package/express) Fast, unopinionated, minimalist web framework.
 * [Express Handlebars](https://www.npmjs.com/package/express-handlebars) Node module as the view engine for Express.
 
+## Screenshots
+![Home Page](burger-app-min.jpg)
+
 ## ORM functionality
-* The ORM involves methods that send methods as callbacks which also send more callbacks, so this needs to be tracked carefully for it to work properly.
+* The ORM (Object Relational Mapper) was created from scratch to handle specific SQL statments.
+* `orm.all()` method uses the `SELECT * FROM ??` SQL statement to handle requests to view all the data from a specific table.
+* `orm.create()` method handles the `INSERT INTO` SQL statements for adding a new burger item.
+* `orm.update()` method handles the `UPDATE table SET column = ?` SQL statemets for the `consume` button.
+
 ### How the SELECT ALL ORM method works:
 1. [controllers/burgers_controller.js] The `router.get("/")` GET route, the router calls the burger.all() function and for its argument sends a callback that will take the final data and render it to the index template.
 2. [models/burger.js] The burger.all method here calls the orm.all method, with `burgers` as the parameter for the table in the `SELECT * FROM table` SQL statement, and the callback parameter that will render to the index template.
 3. [config/orm.js] In my custom ORM the orm.all(getTable, callback) method is called, with getTable and the callback as two parameters. The getTable is used for the SELECT statment. THe callback finally renders the result to the index handlebar template.
-
+<!-- 
 ### How the INSERT ORM method works:
 1. When a valid text input has been submitted, the form is sent as a POST method to the `/api/burgers` route.
 2. [controllers/burgers_controller.js] the `router.post("/api/burgers")` POST route receives the form data and calls the `burgers.create()` method with `req.body.name` as a parameter.
@@ -35,6 +43,7 @@ The Burger App is burger logger that uses MySQL, Node, Express, Handlebars and a
 
 ## MVC Design Pattern
 
+-->
 
 ## Directory structure
 
